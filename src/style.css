@@ -117,6 +117,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 4px;
     position: relative;
+    z-index: 1;
     cursor: pointer;
 }
 
@@ -137,10 +138,21 @@ body {
 
 .siteList .site > .close {
     position: absolute;
+    z-index: 2;
     right: 8px;
     top: 5px;
     cursor: default;
 }
+.siteList .site > .close::after{
+    position: absolute;
+    content: '';
+    z-index: 0;
+    top: -6px;
+    bottom: -4px;
+    left: -4px;
+    right: -8px;
+}
+
 
 .siteList .site:hover > .close {
     display: block;
